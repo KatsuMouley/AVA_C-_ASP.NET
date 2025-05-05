@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\VITORLUIZSANTOSMOUGE\\Desktop\\AVA_C-_ASP.NET\\Avaliacao\\Avaliacao.csproj": {}
+    "C:\\Users\\NARCIZOMARQUESDESOUZ\\Desktop\\AVA_C-_ASP.NET\\Avaliacao\\Avaliacao.csproj": {}
   },
   "projects": {
-    "C:\\Users\\VITORLUIZSANTOSMOUGE\\Desktop\\AVA_C-_ASP.NET\\Avaliacao\\Avaliacao.csproj": {
+    "C:\\Users\\NARCIZOMARQUESDESOUZ\\Desktop\\AVA_C-_ASP.NET\\Avaliacao\\Avaliacao.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\VITORLUIZSANTOSMOUGE\\Desktop\\AVA_C-_ASP.NET\\Avaliacao\\Avaliacao.csproj",
+        "projectUniqueName": "C:\\Users\\NARCIZOMARQUESDESOUZ\\Desktop\\AVA_C-_ASP.NET\\Avaliacao\\Avaliacao.csproj",
         "projectName": "Avaliacao",
-        "projectPath": "C:\\Users\\VITORLUIZSANTOSMOUGE\\Desktop\\AVA_C-_ASP.NET\\Avaliacao\\Avaliacao.csproj",
-        "packagesPath": "C:\\Users\\VITORLUIZSANTOSMOUGE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\VITORLUIZSANTOSMOUGE\\Desktop\\AVA_C-_ASP.NET\\Avaliacao\\obj\\",
+        "projectPath": "C:\\Users\\NARCIZOMARQUESDESOUZ\\Desktop\\AVA_C-_ASP.NET\\Avaliacao\\Avaliacao.csproj",
+        "packagesPath": "C:\\Users\\NARCIZOMARQUESDESOUZ\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\NARCIZOMARQUESDESOUZ\\Desktop\\AVA_C-_ASP.NET\\Avaliacao\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\VITORLUIZSANTOSMOUGE\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\NARCIZOMARQUESDESOUZ\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"

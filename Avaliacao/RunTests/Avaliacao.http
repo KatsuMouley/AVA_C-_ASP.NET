@@ -1,0 +1,38 @@
+@Avaliacao_HostAddress = http://localhost:5221
+
+###
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoibmV3dXNlckBleGFtcGxlLmNvbSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImFkbWluIiwiZXhwIjoxNzQ2NDMzOTU5fQ.1h-M6zxwHa6zpUP8WdeVayixlQV3zdsbdze7HEUm__Y
+
+### Listar todos os produtos
+GET {{Avaliacao_HostAddress}}/api/product/list
+Content-Type: application/json
+
+###
+
+### Listar produto por ID
+GET {{Avaliacao_HostAddress}}/api/product/list/1
+Content-Type: application/json
+
+###
+
+### Criar novo produto
+POST {{Avaliacao_HostAddress}}/api/product/create
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Produto Teste"
+}
+
+###
+
+### Atualizar produto existente
+PUT {{Avaliacao_HostAddress}}/api/product/update/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Produto Atualizado",
+  "createdOn": "2025-01-01T00:00:00"
+}
