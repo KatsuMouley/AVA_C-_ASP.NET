@@ -29,8 +29,12 @@ namespace Avaliacao.Controllers
 
     [HttpPost("usuario")]
     [Authorize]
-    public IActionResult Usuario([FromBody] Usuario user)
+    public IActionResult Usuario()
     {
+        var eventos = _repository.SearchId(id);
+        if (user == null)
+            return NotFound("Usuário não encontrado.");
+        return Ok(user);
     }
 
     [HttpPost("cadastrar")]
