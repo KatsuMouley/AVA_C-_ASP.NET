@@ -12,10 +12,12 @@ namespace Avaliacao.Controllers
     public class EventosController : ControllerBase
     {
     private readonly IEventoRepository _repository;
+    private readonly IUsuarioRepository _repository2;
 
-    public EventosController( IEventoRepository repository )
+    public EventosController( IEventoRepository repository, IUsuarioRepository repository2 )
     {
         _repository = repository;
+        _repository2 = repository2;
     }
 
     [HttpGet("listar")]
@@ -25,16 +27,15 @@ namespace Avaliacao.Controllers
             return Ok(users);
     }
 
-    [HttpGet("usuario/{id}")]
-    [Authorize]
-    public IActionResult UsuarioListar(int id)
-    {
-            var user = _repository.SearchUserId(id);
-            if (user == null)
-                return NotFound("não encontrado.");
-            return Ok(user);
+    // [HttpGet("usuario/{id}")]
+    // [Authorize]
+    // public IActionResult UsuarioListar()
+    // {
+    //         var email = User.Identity?.Name;
+    //         var eventos = _repository.SearchEveryId(_repository.SearchUserId(email));
+    //         return Ok(eventos);
 
-    }
+    // }//Como utilizar o JWT para pegar o user
 
     [HttpPost("cadastrar")]
     [Authorize]

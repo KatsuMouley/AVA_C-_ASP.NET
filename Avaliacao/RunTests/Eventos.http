@@ -1,6 +1,5 @@
 @Avaliacao_HostAddress = http://localhost:5221/api/eventos
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdGVAZW1haWwuY29tIiwiZXhwIjoxNzQ2NDkxNjc4fQ.d-yLn2Ltq7C3gIpU-pPpEIUwgYWg6jQoTpsPMB4M7Ss
-
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdGVAZW1haWwuY29tIiwiZXhwIjoxNzQ2NDkzMTk3fQ.yoGbCVhJkFrbUh8MgdBuE2JBpmdsuJ6w_dg072Cm7ew
 
 ### Listar todos eventos
 GET {{Avaliacao_HostAddress}}/listar
