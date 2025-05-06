@@ -37,5 +37,11 @@ namespace Avaliacao.Repositories
         {
             return _context.Eventos.FirstOrDefault(p => p.Id == id);
         }
+
+        
+        public Evento? SearchUserId(int id)
+        {
+            return _context.Eventos.FirstOrDefault(p => p.UsuarioId == id);
+        }
     }
 }

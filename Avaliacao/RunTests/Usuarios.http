@@ -1,0 +1,37 @@
+@Avaliacao_HostAddress = http://localhost:5221/api/usuarios
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdGVAZW1haWwuY29tIiwiZXhwIjoxNzQ2NDkxNjc4fQ.d-yLn2Ltq7C3gIpU-pPpEIUwgYWg6jQoTpsPMB4M7Ss
+
+
+### Listar todos users
+GET {{Avaliacao_HostAddress}}/listar
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+### Listar user
+GET {{Avaliacao_HostAddress}}/listar/1
+Content-Type: application/json
+
+###
+
+### CADASTRO
+POST {{Avaliacao_HostAddress}}/cadastrar
+Content-Type: application/json
+
+{
+  "email": "teste2@email.com",
+  "senha": "12345"
+}
+
+###
+### LOGIN
+POST {{Avaliacao_HostAddress}}/login
+Content-Type: application/json
+
+{
+  "email": "teste@email.com",
+  "senha": "12345"
+}
+
+###

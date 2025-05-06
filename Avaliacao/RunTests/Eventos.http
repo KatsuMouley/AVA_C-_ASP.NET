@@ -1,0 +1,41 @@
+@Avaliacao_HostAddress = http://localhost:5221/api/eventos
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdGVAZW1haWwuY29tIiwiZXhwIjoxNzQ2NDkxNjc4fQ.d-yLn2Ltq7C3gIpU-pPpEIUwgYWg6jQoTpsPMB4M7Ss
+
+
+### Listar todos eventos
+GET {{Avaliacao_HostAddress}}/listar
+Content-Type: application/json
+
+###
+
+### Listar evento por id
+GET {{Avaliacao_HostAddress}}/listar/1
+Content-Type: application/json
+
+###
+
+### buscar eventos cadastrados pelo user
+GET {{Avaliacao_HostAddress}}/usuario/3
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+### cadastrar evento
+POST {{Avaliacao_HostAddress}}/cadastrar
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+
+{
+  "Nome": "evento a",
+  "Local": "rua a",
+  "Data": "2025-05-05T20:45:09.372259",
+  "UsuarioId": 1,
+  "Usuario":
+  {
+    "email": "teste@email.com",
+    "senha": "12345"
+  }
+}
+
+###

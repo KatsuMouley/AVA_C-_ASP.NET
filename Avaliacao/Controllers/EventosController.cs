@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using Avaliacao.Models;
 using Avaliacao.Repositories.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -15,26 +12,28 @@ namespace Avaliacao.Controllers
     public class EventosController : ControllerBase
     {
     private readonly IEventoRepository _repository;
-    public EventosController(IEventoRepository repository)
+
+    public EventosController( IEventoRepository repository )
     {
         _repository = repository;
     }
 
-    [HttpPost("listar")]
+    [HttpGet("listar")]
     public IActionResult Listar()
     {
             var users = _repository.List();
             return Ok(users);
     }
 
-    [HttpPost("usuario")]
+    [HttpGet("usuario/{id}")]
     [Authorize]
-    public IActionResult Usuario()
+    public IActionResult UsuarioListar(int id)
     {
-        var eventos = _repository.SearchId(id);
-        if (user == null)
-            return NotFound("Usuário não encontrado.");
-        return Ok(user);
+            var user = _repository.SearchUserId(id);
+            if (user == null)
+                return NotFound("não encontrado.");
+            return Ok(user);
+
     }
 
     [HttpPost("cadastrar")]

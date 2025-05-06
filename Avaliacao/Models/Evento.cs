@@ -10,10 +10,9 @@ namespace Avaliacao.Models
         public int Id { get; set; }
         public string Nome { get; set; } = string.Empty;
         public string Local { get; set; } = string.Empty;
-        public string Senha { get; set; } = string.Empty;
-        public DateTime Data { get; set; } = DateTime.Now;
+        public DateTime Data { get; set; }
         public DateTime CriadoEm { get; set; } = DateTime.Now;
         public int UsuarioId { get; set; }
-        public Usuario? usuario { get; set; }
+        public Usuario? usuario { get; set; } 
     }
 }

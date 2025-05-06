@@ -46,7 +46,7 @@ namespace Avaliacao.Controllers
             return Ok(new { token });
         }
 
-        [HttpPost("listar")]
+        [HttpGet("listar")]
         [Authorize]
         public IActionResult Listar()
         {
@@ -77,7 +77,7 @@ namespace Avaliacao.Controllers
 
             var token = new JwtSecurityToken(
                 claims: claims,
-                expires: DateTime.UtcNow.AddSeconds(30),
+                expires: DateTime.UtcNow.AddMinutes(10),
                 signingCredentials: credenciais);
 
             return new JwtSecurityTokenHandler().WriteToken(token);
