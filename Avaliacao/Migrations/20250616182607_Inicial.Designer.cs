@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Avaliacao.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250505223251_Inicial")]
+    [Migration("20250616182607_Inicial")]
     partial class Inicial
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace Avaliacao.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.15")
+                .HasAnnotation("ProductVersion", "8.0.17")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
@@ -44,10 +44,6 @@ namespace Avaliacao.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Senha")
                         .IsRequired()
                         .HasColumnType("longtext");
 

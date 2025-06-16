@@ -19,31 +19,54 @@ namespace Avaliacao.Controllers
         _repository = repository;
         _repository2 = repository2;
     }
-
+        
     [HttpGet("listar")]
     public IActionResult Listar()
     {
-            var users = _repository.List();
-            return Ok(users);
+        var eventos = _repository.List(); // <- lista eventos, não usuários
+        return Ok(eventos);
     }
 
-    // [HttpGet("usuario/{id}")]
-    // [Authorize]
-    // public IActionResult UsuarioListar()
-    // {
-    //         var email = User.Identity?.Name;
-    //         var eventos = _repository.SearchEveryId(_repository.SearchUserId(email));
-    //         return Ok(eventos);
+    [HttpGet("usuario/eventos")]
+    [Authorize]
+    public IActionResult UsuarioListar()
+    {
+        var email = User.Identity?.Name;
 
-    // }//Como utilizar o JWT para pegar o user
+        if (string.IsNullOrEmpty(email))
+            return Unauthorized("Token inválido ou ausente.");
+
+        var usuarioId = _repository2.SearchUserId(email); // <- CORRETO: usa repositório de usuários
+
+        if (usuarioId == 0)
+            return NotFound("Usuário não encontrado.");
+
+        var eventos = _repository.SearchEveryId(usuarioId);
+        return Ok(eventos);
+    }
 
     [HttpPost("cadastrar")]
     [Authorize]
     public IActionResult Cadastrar([FromBody] Evento evento)
     {
-            _repository.Cadastrar(evento);
-            _repository.Save();
-            return CreatedAtAction(nameof(ListById), new { id = evento.Id }, evento);
+        var email = User.Identity?.Name;
+
+        if (string.IsNullOrEmpty(email))
+            return Unauthorized("Token inválido ou ausente.");
+
+        var usuarioId = _repository2.SearchUserId(email);
+
+        if (usuarioId == 0)
+            return NotFound("Usuário não encontrado.");
+
+        // Força a associação segura ao usuário autenticado
+        evento.UsuarioId = usuarioId;
+        evento.usuario = null; // evita criação de novo usuário
+
+        _repository.Cadastrar(evento);
+        _repository.Save();
+
+        return CreatedAtAction(nameof(ListById), new { id = evento.Id }, evento);
     }
 
     [HttpGet("listar/{id}")]

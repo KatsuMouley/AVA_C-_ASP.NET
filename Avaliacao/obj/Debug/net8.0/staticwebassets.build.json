@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "+/ZAskHGiKf0MqbQfljrzjtw6PLOuyxXx2F500ZD/Dk=",
+  "Hash": "D90Pdpc0e8nbTqq2j+7yNiM4fL0PnyKn+GM8u3juKgc=",
   "Source": "Avaliacao",
   "BasePath": "_content/Avaliacao",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

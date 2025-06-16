@@ -17,7 +17,7 @@ namespace Avaliacao.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.15")
+                .HasAnnotation("ProductVersion", "8.0.17")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
@@ -41,10 +41,6 @@ namespace Avaliacao.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("Senha")
                         .IsRequired()
                         .HasColumnType("longtext");
 

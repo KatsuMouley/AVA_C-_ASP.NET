@@ -9,4 +9,5 @@ public interface IUsuarioRepository
     void Save();
     void Cadastrar(Usuario user);
     Usuario? Login(string email, string password);
+    int SearchUserId(string search);
 }

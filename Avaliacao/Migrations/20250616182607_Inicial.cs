@@ -43,8 +43,6 @@ namespace Avaliacao.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Local = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Senha = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
                     Data = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     CriadoEm = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UsuarioId = table.Column<int>(type: "int", nullable: false)

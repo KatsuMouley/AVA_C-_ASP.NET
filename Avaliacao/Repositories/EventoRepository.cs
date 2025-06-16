@@ -13,7 +13,7 @@ namespace Avaliacao.Repositories
         private readonly ApplicationDbContext _context;
         //Essa construção injeta a instância do AppDbContext
         //no repositório para permitir o acesso ao banco de dados.
-        public EventoRepository( ApplicationDbContext context)
+        public EventoRepository(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -37,15 +37,10 @@ namespace Avaliacao.Repositories
         {
             return _context.Eventos.FirstOrDefault(p => p.Id == id);
         }
-        public Evento? SearchEveryId(int id)
+        public List<Evento> SearchEveryId(int id)
         {
-            return _context.Eventos.ToList(p => p.UsuarioId == id);
+            return _context.Eventos.Where(p => p.UsuarioId == id).ToList();
         }
-
         
-        public int SearchUserId(string id)
-        {
-            return _context.Usuarios.FirstOrDefault(p => p.Email == id).Id;
-        }
     }
 }

@@ -1,0 +1,70 @@
+@Avaliacao_HostAddress = http://localhost:5221
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdGVAZW1haWwuY29tIiwiZXhwIjoxNzUwMDk5MjkyfQ.rB8yiNmXAAdNwIZVFqzIY2WIJpIroj_w3XC7Hfrzxjs
+
+### Listar todos users
+GET {{Avaliacao_HostAddress}}/api/usuarios/listar
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+### Listar user
+GET {{Avaliacao_HostAddress}}/api/usuarios/listar/1
+Content-Type: application/json
+
+###
+
+### CADASTRO
+POST {{Avaliacao_HostAddress}}/api/usuarios/cadastrar
+Content-Type: application/json
+
+{
+  "email": "teste@email.com",
+  "senha": "12345"
+}
+
+###
+### LOGIN
+POST {{Avaliacao_HostAddress}}/api/usuarios/login
+Content-Type: application/json
+
+{
+  "email": "teste@email.com",
+  "senha": "12345"
+}
+
+
+### EVENTOS-----------------------------
+
+### Listar todos eventos
+GET {{Avaliacao_HostAddress}}/api/eventos/listar
+Content-Type: application/json
+
+###
+
+### Listar evento por id
+GET {{Avaliacao_HostAddress}}/api/eventos/listar/1
+Content-Type: application/json
+
+###
+
+### buscar eventos cadastrados pelo user logado
+GET {{Avaliacao_HostAddress}}/api/eventos/usuario/eventos
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+### cadastrar evento
+POST {{Avaliacao_HostAddress}}/api/eventos/cadastrar
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "Nome": "evento 1",
+  "Local": "rua a",
+  "Data": "2025-05-05T20:45:09.372259",
+  "UsuarioId": 2
+}
+
+###

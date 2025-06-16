@@ -13,7 +13,7 @@ namespace Avaliacao.Repositories
         private readonly ApplicationDbContext _context;
         //Essa construção injeta a instância do AppDbContext
         //no repositório para permitir o acesso ao banco de dados.
-        public UsuarioRepository( ApplicationDbContext context)
+        public UsuarioRepository(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -42,5 +42,12 @@ namespace Avaliacao.Repositories
         {
             return _context.Usuarios.FirstOrDefault(p => p.Id == id);
         }
+
+        public int SearchUserId(string email)
+        {
+            var usuario = _context.Usuarios.FirstOrDefault(u => u.Email == email);
+            return usuario?.Id ?? 0;
+        }
+
     }
 }
